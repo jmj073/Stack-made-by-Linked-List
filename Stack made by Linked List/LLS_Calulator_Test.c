@@ -1,0 +1,23 @@
+#include "LLS_H.h"
+#include "Calculator.h"
+
+int main() {
+	char InfixExpression[100];
+	char PostfixExpression[100];
+
+	double Result = 0.0;
+
+	memset(InfixExpression, 0, sizeof(InfixExpression));
+	memset(PostfixExpression, 0, sizeof(PostfixExpression));
+
+	printf("Enter Infix Expression : ");
+	scanf("%s", InfixExpression);
+
+	GetPostfix(InfixExpression, PostfixExpression);
+
+	printf("Infix : %s\nPostfix : %s\n", InfixExpression, PostfixExpression);
+
+	Result = Calculate(PostfixExpression);
+
+	printf("Calculation Result : %lf\n", Result);
+}
